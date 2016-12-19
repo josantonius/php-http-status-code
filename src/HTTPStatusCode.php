@@ -69,6 +69,8 @@ class HTTPStatusCode {
             $status = json_decode($jsonFile, true);
 
             static::$status = $status['data'][$lang];
+
+            unset($status);
         }
 
         return static::$status;
