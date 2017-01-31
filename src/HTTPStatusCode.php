@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * PHP library to get the meaning from HTTP response status codes.
  * 
@@ -8,9 +8,9 @@
  * @author     Josantonius - info@josantonius.com
  * @copyright  Copyright (c) 2016 JST PHP Framework
  * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @version    1.0.0
+ * @version    1.1.0
  * @link       https://github.com/Josantonius/PHP-HTTPStatusCode
- * @since      File available since 1.0.0 - Update: 2016-12-19
+ * @since      File available since 1.0.0 - Update: 2017-01-30
  */
 
 namespace Josantonius\HTTPStatusCode;
@@ -51,7 +51,7 @@ class HTTPStatusCode {
      *
      * @return array → HTTP response status code
      */
-    protected static function load(string $lang = 'en'): array {
+    protected static function load($lang = 'en') {
 
         if ($lang != static::$lang) {
 
@@ -89,11 +89,13 @@ class HTTPStatusCode {
      *
      * @return string → HTTP status code definition
      */
-    public static function get(int $code, string $lang = 'en', string $size = 'short'): string {
+    public static function get($code, $lang = 'en', $size = 'short') {
 
         static::load($lang);
 
-        return static::$status[$code][$size] ?? "Undefined";
+        $result = (isset(static::$status[$code][$size])) ? static::$status[$code][$size] : "Undefined";
+
+        return $result;
     }
 
     /**
@@ -105,7 +107,7 @@ class HTTPStatusCode {
      *
      * @return array → all definitions of HTTP response codes
      */
-    public static function getAll(string $lang = 'en'): array {
+    public static function getAll($lang = 'en') {
 
         return static::load($lang);
     }

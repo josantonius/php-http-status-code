@@ -8,9 +8,9 @@
         "_author"    : "Josantonius - info@josantonius.com",
         "_copyright" : "Copyright (c) 2016 JST PHP Framework",
         "_license"   : "http://opensource.org/licenses/MIT - The MIT License (MIT)",
-        "_version"   : "1.0.0",
+        "_version"   : "1.1.0",
         "_link"      : "http://github.com/josantonius/PHP-HTTPStatusCode",
-        "_since"     : "File available since 1.0.0 - Update: 2016-12-19",
+        "_since"     : "File available since 1.0.0 - Update: 2017-01-30",
         "_comment"   : "Compiled from wikipedia.org/wiki/List_of_HTTP_status_codes"
     },
 
