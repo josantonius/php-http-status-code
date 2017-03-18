@@ -30,7 +30,7 @@ Para instalar PHP HTTPStatusCode library, simplemente escribe:
 
     $ composer require Josantonius/HTTPStatusCode
 
-El comando anterior solamente instalará los archivos necesarios, si prefieres descargar todo el código, incluyendo tests, puedes utilizar:
+El comando anterior sólo instalará los archivos necesarios, si prefieres descargar todo el código fuente (incluyendo tests, directorio vendor, excepciones no utilizadas, documentos...) puedes utilizar:
 
     $ composer require Josantonius/HTTPStatusCode --prefer-source
 
