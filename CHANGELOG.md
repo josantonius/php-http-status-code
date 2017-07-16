@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.1.2 - 2017-07-16
+* Deleted `Josantonius\HTTPStatusCode\Exception\HTTPStatusCodeException` class.
+* Deleted `Josantonius\HTTPStatusCode\Exception\Exceptions` abstract class.
+* Deleted `Josantonius\HTTPStatusCode\Exception\HTTPStatusCodeException->__construct()` method.
+
 ## 1.1.1 - 2017-03-18
 * Some files were excluded from download and comments and readme files were updated.
 

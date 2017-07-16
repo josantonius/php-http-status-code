@@ -11,8 +11,6 @@
 
 namespace Josantonius\HTTPStatusCode;
 
-# use Josantonius\HTTPStatusCode\Exception\HTTPStatusCodeException;
-
 /**
  * HTTP response status codes handler.
  *
@@ -49,27 +47,27 @@ class HTTPStatusCode {
      */
     protected static function load($lang = 'en') {
 
-        if ($lang != static::$lang) {
+        if ($lang != self::$lang) {
 
-            static::$status = null;
+            self::$status = null;
 
-            static::$lang = $lang;
+            self::$lang = $lang;
         }
 
-        if (is_null(static::$status)) {
+        if (is_null(self::$status)) {
 
-            $filepath = __DIR__ . "/resources/http-status-code.jsond";
+            $filepath = __DIR__ . '/resources/http-status-code.jsond';
 
             $jsonFile = file_get_contents($filepath);
 
             $status = json_decode($jsonFile, true);
 
-            static::$status = $status['data'][$lang];
+            self::$status = $status['data'][$lang];
 
             unset($status);
         }
 
-        return static::$status;
+        return self::$status;
     }
 
     /**
@@ -78,18 +76,18 @@ class HTTPStatusCode {
      * @since 1.0.0
      *
      * @param int    $code →  100  -  511  → HTTP status code definition
-     * @param string $code → "1xx" - "5xx" → HTTP status code general type definition
+     * @param string $code → '1xx' - '5xx' → HTTP status code general type definition
      * @param string $lang                 → language for definition
-     * @param string $size →    "short"    → short definition
-     *                          "large"    → large definition
+     * @param string $size →    'short'    → short definition
+     *                          'large'    → large definition
      *
      * @return string → HTTP status code definition
      */
     public static function get($code, $lang = 'en', $size = 'short') {
 
-        static::load($lang);
+        self::load($lang);
 
-        $result = (isset(static::$status[$code][$size])) ? static::$status[$code][$size] : "Undefined";
+        $result = (isset(self::$status[$code][$size])) ? self::$status[$code][$size] : 'Undefined';
 
         return $result;
     }
@@ -105,6 +103,6 @@ class HTTPStatusCode {
      */
     public static function getAll($lang = 'en') {
 
-        return static::load($lang);
+        return self::load($lang);
     }
 }
