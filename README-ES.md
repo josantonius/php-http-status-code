@@ -4,7 +4,7 @@
 
 [English version](README.md)
 
-Librería PHP para obtener significado de códigos de estado de respuesta HTTP.
+Biblioteca PHP para obtener significado de códigos de estado de respuesta HTTP.
 
 ---
 
@@ -24,7 +24,7 @@ Librería PHP para obtener significado de códigos de estado de respuesta HTTP.
 <p align="center"><strong>Echa un vistazo al código</strong></p>
 
 <p align="center">
-  <a href="" title="Echa un vistazo al código">
+  <a href="https://youtu.be/F_lXIl6pPF4" title="Echa un vistazo al código">
     <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
   </a>
 </p>
@@ -53,7 +53,7 @@ Esta biblioteca es soportada por versiones de PHP 5.6 o superiores y es compatib
 
 ### Cómo empezar y ejemplos
 
-Para utilizar esta librería, simplemente:
+Para utilizar esta biblioteca, simplemente:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
@@ -62,7 +62,7 @@ use Josantonius\HTTPStatusCode\HTTPStatusCode;
 ```
 ### Métodos disponibles
 
-Métodos disponibles en esta librería:
+Métodos disponibles en esta biblioteca:
 
 ```php
 HTTPStatusCode::load();
@@ -71,7 +71,7 @@ HTTPStatusCode::getAll();
 ```
 ### Uso
 
-Ejemplo de uso para esta librería:
+Ejemplo de uso para esta biblioteca:
 
 ```php
 <?php
@@ -148,7 +148,7 @@ $loader->addPsr4('Josantonius\\HTTPStatusCode\\Tests\\', __DIR__ . '/vendor/josa
 
 use Josantonius\HTTPStatusCode\Tests\HTTPStatusCodeTest;
 ```
-Métodos de prueba disponibles en esta librería:
+Métodos de prueba disponibles en esta biblioteca:
 
 ```php
 HTTPStatusCodeTest::testLoad();
