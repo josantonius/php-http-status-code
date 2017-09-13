@@ -1,6 +1,6 @@
 # PHP HTTPStatusCode library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/httpstatuscode/v/stable)](https://packagist.org/packages/josantonius/httpstatuscode) [![Total Downloads](https://poser.pugx.org/josantonius/httpstatuscode/downloads)](https://packagist.org/packages/josantonius/httpstatuscode) [![Latest Unstable Version](https://poser.pugx.org/josantonius/httpstatuscode/v/unstable)](https://packagist.org/packages/josantonius/httpstatuscode) [![License](https://poser.pugx.org/josantonius/httpstatuscode/license)](https://packagist.org/packages/josantonius/httpstatuscode)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/httpstatuscode/v/stable)](https://packagist.org/packages/josantonius/httpstatuscode) [![Total Downloads](https://poser.pugx.org/josantonius/httpstatuscode/downloads)](https://packagist.org/packages/josantonius/httpstatuscode) [![Latest Unstable Version](https://poser.pugx.org/josantonius/httpstatuscode/v/unstable)](https://packagist.org/packages/josantonius/httpstatuscode) [![License](https://poser.pugx.org/josantonius/httpstatuscode/license)](https://packagist.org/packages/josantonius/httpstatuscode) [![Travis](https://travis-ci.org/Josantonius/PHP-HTTPStatusCode.svg)](https://travis-ci.org/Josantonius/PHP-HTTPStatusCode)
 
 [English version](README.md)
 
@@ -18,16 +18,6 @@ Biblioteca PHP para obtener significado de códigos de estado de respuesta HTTP.
 - [Repositorio](#repositorio)
 - [Licencia](#licencia)
 - [Copyright](#copyright)
-
----
-
-<p align="center"><strong>Echa un vistazo al código</strong></p>
-
-<p align="center">
-  <a href="https://youtu.be/F_lXIl6pPF4" title="Echa un vistazo al código">
-    <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
-  </a>
-</p>
 
 ---
 
@@ -138,32 +128,13 @@ array(67) {
 
 ### Tests 
 
-Para utilizar la clase de [pruebas](tests), simplemente:
+Para ejecutar las [pruebas](tests/HTTPStatusCode/test) simplemente:
 
-```php
-<?php
-$loader = require __DIR__ . '/vendor/autoload.php';
+    $ git clone https://github.com/Josantonius/PHP-HTTPStatusCode.git
+    
+    $ cd PHP-HTTPStatusCode
 
-$loader->addPsr4('Josantonius\\HTTPStatusCode\\Tests\\', __DIR__ . '/vendor/josantonius/httpstatuscode/tests');
-
-use Josantonius\HTTPStatusCode\Tests\HTTPStatusCodeTest;
-```
-Métodos de prueba disponibles en esta biblioteca:
-
-```php
-HTTPStatusCodeTest::testLoad();
-HTTPStatusCodeTest::testLoadES();
-HTTPStatusCodeTest::testGetEN();
-HTTPStatusCodeTest::testGetES();
-HTTPStatusCodeTest::testGetLargeEN();
-HTTPStatusCodeTest::testGetLargeES();
-HTTPStatusCodeTest::testGetShortEN();
-HTTPStatusCodeTest::testGetShortES();
-HTTPStatusCodeTest::testGetUndefinedEN();
-HTTPStatusCodeTest::testGetUndefinedES();
-HTTPStatusCodeTest::testGetAllEN();
-HTTPStatusCodeTest::testGetAllES();
-```
+    $ phpunit
 
 ### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
