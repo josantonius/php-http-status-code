@@ -35,7 +35,7 @@ The previous command will only install the necessary files, if you prefer to dow
 
 Or you can also clone the complete repository with Git:
 
-  $ git clone https://github.com/Josantonius/PHP-HTTPStatusCode.git
+    $ git clone https://github.com/Josantonius/PHP-HTTPStatusCode.git
 
 ### Requirements
 

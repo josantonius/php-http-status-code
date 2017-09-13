@@ -35,7 +35,7 @@ El comando anterior sólo instalará los archivos necesarios, si prefieres desca
 
 También puedes clonar el repositorio completo con Git:
 
-  $ git clone https://github.com/Josantonius/PHP-HTTPStatusCode.git
+    $ git clone https://github.com/Josantonius/PHP-HTTPStatusCode.git
 
 ### Requisitos
 
