@@ -1,5 +1,35 @@
 # CHANGELOG
 
+## 1.1.4 - 2017-10-30
+
+* Implemented `PSR-4 autoloader standard` from all library files.
+
+* Implemented `PSR-2 coding standard` from all library PHP files.
+
+* Implemented `PHPCS` to ensure that PHP code complies with `PSR2` code standards.
+
+* Implemented `Codacy` to automates code reviews and monitors code quality over time.
+
+* Implemented `Codecov` to coverage reports.
+
+* Added `HTTPStatusCode/phpcs.ruleset.xml` file.
+
+* Deleted `HTTPStatusCode/src/bootstrap.php` file.
+
+* Deleted `HTTPStatusCode/tests/bootstrap.php` file.
+
+* Deleted `HTTPStatusCode/tests/resources/http-status-code.jsond` file.
+
+* Deleted `HTTPStatusCode/vendor` folder.
+
+* Changed `Josantonius\HTTPStatusCode\Test\HTTPStatusCodeTest` class to  `Josantonius\HTTPStatusCode\HTTPStatusCodeTest` class.
+
+* Added `Josantonius\HTTPStatusCode\HTTPStatusCodeCollection` class.
+* Added `Josantonius\HTTPStatusCode\HTTPStatusCodeCollection::all()` method.
+* Added `Josantonius\HTTPStatusCode\HTTPStatusCodeCollection::get()` method.
+
+* Deleted `Josantonius\HTTPStatusCode\HTTPStatusCode::load()` method.
+
 ## 1.1.3 - 2017-09-13
 
 * Unit tests supported by `PHPUnit` were added.
