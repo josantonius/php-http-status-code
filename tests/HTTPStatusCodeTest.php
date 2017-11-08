@@ -8,7 +8,6 @@
  * @link      https://github.com/Josantonius/PHP-HTTPStatusCode
  * @since     1.1.3
  */
-
 namespace Josantonius\HTTPStatusCode;
 
 use PHPUnit\Framework\TestCase;
@@ -21,17 +20,47 @@ use PHPUnit\Framework\TestCase;
 class HTTPStatusCodeTest extends TestCase
 {
     /**
+     * HTTPStatusCode instance.
+     *
+     * @since 1.1.5
+     *
+     * @var object
+     */
+    protected $HTTPStatusCode;
+
+    /**
+     * Set up.
+     *
+     * @since 1.1.5
+     */
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->HTTPStatusCode = new HTTPStatusCode;
+    }
+
+    /**
+     * Check if it is an instance of HTTPStatusCode.
+     *
+     * @since 1.1.5
+     */
+    public function testIsInstanceOfHTTPStatusCode()
+    {
+        $actual = $this->HTTPStatusCode;
+        $this->assertInstanceOf('Josantonius\HTTPStatusCode\HTTPStatusCode', $actual);
+    }
+
+    /**
      * Get the short english meaning of an HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetEN()
     {
         $this->assertContains(
             'OK',
-            HTTPStatusCode::get(200)
+            $this->HTTPStatusCode->get(200)
         );
     }
 
@@ -39,14 +68,12 @@ class HTTPStatusCodeTest extends TestCase
      * Get the short spanish meaning of an HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetES()
     {
         $this->assertContains(
             'OK',
-            HTTPStatusCode::get(200, 'es')
+            $this->HTTPStatusCode->get(200, 'es')
         );
     }
 
@@ -54,14 +81,12 @@ class HTTPStatusCodeTest extends TestCase
      * Get the detailed english meaning of an HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetLargeEN()
     {
         $this->assertContains(
             'Standard response for successful HTTP requests',
-            HTTPStatusCode::get(200, 'en', 'large')
+            $this->HTTPStatusCode->get(200, 'en', 'large')
         );
     }
 
@@ -69,14 +94,12 @@ class HTTPStatusCodeTest extends TestCase
      * Get the detailed spanish meaning of an HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetLargeES()
     {
         $this->assertContains(
             'Respuesta estándar para peticiones correctas',
-            HTTPStatusCode::get(200, 'es', 'large')
+            $this->HTTPStatusCode->get(200, 'es', 'large')
         );
     }
 
@@ -84,14 +107,12 @@ class HTTPStatusCodeTest extends TestCase
      * Get the detailed english meaning of an HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetShortEN()
     {
         $this->assertContains(
             'OK',
-            HTTPStatusCode::get(200, 'en', 'short')
+            $this->HTTPStatusCode->get(200, 'en', 'short')
         );
     }
 
@@ -99,14 +120,12 @@ class HTTPStatusCodeTest extends TestCase
      * Get the short spanish meaning of an HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetShortES()
     {
         $this->assertContains(
             'OK',
-            HTTPStatusCode::get(200, 'es', 'short')
+            $this->HTTPStatusCode->get(200, 'es', 'short')
         );
     }
 
@@ -114,13 +133,11 @@ class HTTPStatusCodeTest extends TestCase
      * Get english meaning from an undefined HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetUndefinedEN()
     {
         $this->assertFalse(
-            HTTPStatusCode::get(800)
+            $this->HTTPStatusCode->get(800)
         );
     }
 
@@ -128,13 +145,11 @@ class HTTPStatusCodeTest extends TestCase
      * Get spanish meaning from an undefined HTTP response code.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetUndefinedES()
     {
         $this->assertFalse(
-            HTTPStatusCode::get(800, 'es')
+            $this->HTTPStatusCode->get(800, 'es')
         );
     }
 
@@ -142,14 +157,12 @@ class HTTPStatusCodeTest extends TestCase
      * Get a english HTTP response code array.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetAllEN()
     {
         $this->assertInternalType(
             'array',
-            HTTPStatusCode::getAll()
+            $this->HTTPStatusCode->getAll()
         );
     }
 
@@ -157,14 +170,12 @@ class HTTPStatusCodeTest extends TestCase
      * Get a spanish HTTP response code array.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGetAllES()
     {
         $this->assertInternalType(
             'array',
-            HTTPStatusCode::getAll('es')
+            $this->HTTPStatusCode->getAll('es')
         );
     }
 }

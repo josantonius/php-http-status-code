@@ -8,7 +8,6 @@
  * @link      https://github.com/Josantonius/PHP-HTTPStatusCode
  * @since     1.0.0
  */
-
 namespace Josantonius\HTTPStatusCode;
 
 /**
@@ -34,9 +33,9 @@ class HTTPStatusCode
      *
      * @param int    $code →  100  -  511  → HTTP response code
      * @param string $code → '1xx' - '5xx' → code general type definition
-     * @param string $lang                 → language for definition
+     * @param string $lang → language for definition
      * @param string $size →    'short'    → short definition
-     *                          'large'    → large definition
+     *                     'large'    → large definition
      *
      * @return string|false → HTTP status code definition
      */
