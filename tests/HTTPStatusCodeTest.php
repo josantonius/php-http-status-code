@@ -3,7 +3,7 @@
  * PHP library to get the meaning from HTTP response status codes.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2017 (c) Josantonius - PHP-HTTPStatusCode
+ * @copyright 2016 - 2018 (c) Josantonius - PHP-HTTPStatusCode
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-HTTPStatusCode
  * @since     1.1.3
@@ -14,8 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Tests class for HTTPStatusCode library.
- *
- * @since 1.1.3
  */
 class HTTPStatusCodeTest extends TestCase
 {
@@ -47,135 +45,139 @@ class HTTPStatusCodeTest extends TestCase
      */
     public function testIsInstanceOfHTTPStatusCode()
     {
-        $actual = $this->HTTPStatusCode;
-        $this->assertInstanceOf('Josantonius\HTTPStatusCode\HTTPStatusCode', $actual);
+        $httpStatusCode = $this->HTTPStatusCode;
+
+        $this->assertInstanceOf(
+            'Josantonius\HTTPStatusCode\HTTPStatusCode',
+            $this->HTTPStatusCode
+        );
     }
 
     /**
      * Get the short english meaning of an HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetEN()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertContains(
             'OK',
-            $this->HTTPStatusCode->get(200)
+            $httpStatusCode::get(200)
         );
     }
 
     /**
      * Get the short spanish meaning of an HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetES()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertContains(
             'OK',
-            $this->HTTPStatusCode->get(200, 'es')
+            $httpStatusCode::get(200, 'es')
         );
     }
 
     /**
      * Get the detailed english meaning of an HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetLargeEN()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertContains(
             'Standard response for successful HTTP requests',
-            $this->HTTPStatusCode->get(200, 'en', 'large')
+            $httpStatusCode::get(200, 'en', 'large')
         );
     }
 
     /**
      * Get the detailed spanish meaning of an HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetLargeES()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertContains(
             'Respuesta estándar para peticiones correctas',
-            $this->HTTPStatusCode->get(200, 'es', 'large')
+            $httpStatusCode::get(200, 'es', 'large')
         );
     }
 
     /**
      * Get the detailed english meaning of an HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetShortEN()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertContains(
             'OK',
-            $this->HTTPStatusCode->get(200, 'en', 'short')
+            $httpStatusCode::get(200, 'en', 'short')
         );
     }
 
     /**
      * Get the short spanish meaning of an HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetShortES()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertContains(
             'OK',
-            $this->HTTPStatusCode->get(200, 'es', 'short')
+            $httpStatusCode::get(200, 'es', 'short')
         );
     }
 
     /**
      * Get english meaning from an undefined HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetUndefinedEN()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertFalse(
-            $this->HTTPStatusCode->get(800)
+            $httpStatusCode::get(800)
         );
     }
 
     /**
      * Get spanish meaning from an undefined HTTP response code.
-     *
-     * @since 1.1.3
      */
     public function testGetUndefinedES()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertFalse(
-            $this->HTTPStatusCode->get(800, 'es')
+            $httpStatusCode::get(800, 'es')
         );
     }
 
     /**
      * Get a english HTTP response code array.
-     *
-     * @since 1.1.3
      */
     public function testGetAllEN()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertInternalType(
             'array',
-            $this->HTTPStatusCode->getAll()
+            $httpStatusCode::getAll()
         );
     }
 
     /**
      * Get a spanish HTTP response code array.
-     *
-     * @since 1.1.3
      */
     public function testGetAllES()
     {
+        $httpStatusCode = $this->HTTPStatusCode;
+
         $this->assertInternalType(
             'array',
-            $this->HTTPStatusCode->getAll('es')
+            $httpStatusCode::getAll('es')
         );
     }
 }

@@ -3,7 +3,7 @@
  * PHP library to get the meaning from HTTP response status codes.
  *
  * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2017 (c) Josantonius - PHP-HTTPStatusCode
+ * @copyright 2016 - 2018 (c) Josantonius - PHP-HTTPStatusCode
  * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
  * @link      https://github.com/Josantonius/PHP-HTTPStatusCode
  * @since     1.1.4
@@ -14,15 +14,11 @@ namespace Josantonius\HTTPStatusCode;
  * HTTP status code handler.
  *
  * Compiled from http://wikipedia.org/wiki/List_of_HTTP_status_codes
- *
- * @since 1.1.4
  */
 class HTTPStatusCodeCollection
 {
     /**
      * HTTP status code list.
-     *
-     * @since 1.1.4
      *
      * @var array
      */
@@ -573,8 +569,6 @@ class HTTPStatusCodeCollection
     /**
      * Returns all HTTP status codes.
      *
-     * @since 1.1.4
-     *
      * @param string $lang → language for definitions
      *
      * @return array|null
@@ -586,8 +580,6 @@ class HTTPStatusCodeCollection
 
     /**
      * Returns HTTP status definition by code.
-     *
-     * @since 1.1.4
      *
      * @param int    $code →  100  -  511  → code definition
      * @param string $code → '1xx' - '5xx' → code general type definition
