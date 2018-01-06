@@ -45,8 +45,6 @@ class HTTPStatusCodeTest extends TestCase
      */
     public function testIsInstanceOfHTTPStatusCode()
     {
-        $httpStatusCode = $this->HTTPStatusCode;
-
         $this->assertInstanceOf(
             'Josantonius\HTTPStatusCode\HTTPStatusCode',
             $this->HTTPStatusCode
