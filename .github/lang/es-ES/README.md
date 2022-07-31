@@ -1,10 +1,10 @@
 # PHP HTTP Status Code library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/php-http-status-code/v/stable)](https://packagist.org/packages/josantonius/php-http-status-code)
-[![License](https://poser.pugx.org/josantonius/php-http-status-code/license)](LICENSE)
-[![Total Downloads](https://poser.pugx.org/josantonius/php-http-status-code/downloads)](https://packagist.org/packages/josantonius/php-http-status-code)
-[![CI](https://github.com/josantonius/php-php-http-status-code/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/josantonius/php-php-http-status-code/actions/workflows/ci.yml)
-[![CodeCov](https://codecov.io/gh/josantonius/php-php-http-status-code/branch/master/graph/badge.svg)](https://codecov.io/gh/josantonius/php-php-http-status-code)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/http-status-code/v/stable)](https://packagist.org/packages/josantonius/php-http-status-code)
+[![License](https://poser.pugx.org/josantonius/http-status-code/license)](LICENSE)
+[![Total Downloads](https://poser.pugx.org/josantonius/http-status-code/downloads)](https://packagist.org/packages/josantonius/http-status-code)
+[![CI](https://github.com/josantonius/php-http-status-code/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/josantonius/php-http-status-code/actions/workflows/ci.yml)
+[![CodeCov](https://codecov.io/gh/josantonius/php-http-status-code/branch/main/graph/badge.svg)](https://codecov.io/gh/josantonius/php-http-status-code)
 [![PSR1](https://img.shields.io/badge/PSR-1-f57046.svg)](https://www.php-fig.org/psr/psr-1/)
 [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](https://www.php-fig.org/psr/psr-4/)
 [![PSR12](https://img.shields.io/badge/PSR-12-1abc9c.svg)](https://www.php-fig.org/psr/psr-12/)
