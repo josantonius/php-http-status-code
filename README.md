@@ -13,11 +13,6 @@
 
 PHP library to get HTTP status code messages and definitions.
 
-> Version 1.x is considered as deprecated and unsupported.
-> In this version (2.x) the library was completely restructured.
-> It is recommended to review the documentation for this version and make the necessary changes
-> before starting to use it, as it not be compatible with version 1.x.
-
 ---
 
 - [Requirements](#requirements)
@@ -246,8 +241,7 @@ Run unit tests with [PHPUnit](https://phpunit.de/):
 composer phpunit
 ```
 
-Run [PSR12](http://www.php-fig.org/psr/psr-12/) code standard tests with
-[PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+Run code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
 ```console
 composer phpcs

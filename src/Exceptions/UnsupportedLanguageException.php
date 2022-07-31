@@ -12,7 +12,7 @@
 namespace Josantonius\HttpStatusCode\Exceptions;
 
 /**
- * Language exception manager.
+ * Unsupported language exception manager.
  */
 class UnsupportedLanguageException extends \Exception
 {
