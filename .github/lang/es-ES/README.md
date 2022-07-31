@@ -13,11 +13,6 @@
 
 Biblioteca de PHP para obtener mensajes y definiciones de códigos de estado HTTP.
 
-> La versión 1.x se considera obsoleta y sin soporte.
-> En esta versión (2.x) la biblioteca fue completamente reestructurada.
-> Se recomienda revisar la documentación de esta versión y hacer los cambios necesarios
-> antes de empezar a utilizarla, ya que no es compatible con la versión 1.x.
-
 ---
 
 - [Requisitos](#requisitos)
@@ -246,8 +241,7 @@ Ejecutar pruebas unitarias con [PHPUnit](https://phpunit.de/):
 composer phpunit
 ```
 
-Ejecutar pruebas de estándares de código [PSR2](http://www.php-fig.org/psr/psr-2/) con
-[PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+Ejecutar pruebas de estándares de código con [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
 ```console
 composer phpcs
