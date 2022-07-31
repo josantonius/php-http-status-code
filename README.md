@@ -1,10 +1,22 @@
-# PHP HTTPStatusCode library
+# PHP HTTP Status Code library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/HTTPStatusCode/v/stable)](https://packagist.org/packages/josantonius/HTTPStatusCode) [![Latest Unstable Version](https://poser.pugx.org/josantonius/HTTPStatusCode/v/unstable)](https://packagist.org/packages/josantonius/HTTPStatusCode) [![License](https://poser.pugx.org/josantonius/HTTPStatusCode/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/166477cc273f4896a832580b77b2d8d7)](https://www.codacy.com/app/Josantonius/PHP-HTTPStatusCode?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-HTTPStatusCode&amp;utm_campaign=Badge_Grade)[![Total Downloads](https://poser.pugx.org/josantonius/HTTPStatusCode/downloads)](https://packagist.org/packages/josantonius/HTTPStatusCode) [![Travis](https://travis-ci.org/Josantonius/PHP-HTTPStatusCode.svg)](https://travis-ci.org/Josantonius/PHP-HTTPStatusCode) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-HTTPStatusCode/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-HTTPStatusCode)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/php-http-status-code/v/stable)](https://packagist.org/packages/josantonius/php-http-status-code)
+[![License](https://poser.pugx.org/josantonius/php-http-status-code/license)](LICENSE)
+[![Total Downloads](https://poser.pugx.org/josantonius/php-http-status-code/downloads)](https://packagist.org/packages/josantonius/php-http-status-code)
+[![CI](https://github.com/josantonius/php-php-http-status-code/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/josantonius/php-php-http-status-code/actions/workflows/ci.yml)
+[![CodeCov](https://codecov.io/gh/josantonius/php-php-http-status-code/branch/master/graph/badge.svg)](https://codecov.io/gh/josantonius/php-php-http-status-code)
+[![PSR1](https://img.shields.io/badge/PSR-1-f57046.svg)](https://www.php-fig.org/psr/psr-1/)
+[![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](https://www.php-fig.org/psr/psr-4/)
+[![PSR12](https://img.shields.io/badge/PSR-12-1abc9c.svg)](https://www.php-fig.org/psr/psr-12/)
 
-[Versión en español](README-ES.md)
+**Translations**: [Español](.github/lang/es-ES/README.md)
 
-PHP library to get the meaning from HTTP response status codes.
+PHP library to get HTTP status code messages and definitions.
+
+> Version 1.x is considered as deprecated and unsupported.
+> In this version (2.x) the library was completely restructured.
+> It is recommended to review the documentation for this version and make the necessary changes
+> before starting to use it, as it not be compatible with version 1.x.
 
 ---
 
@@ -15,73 +27,86 @@ PHP library to get the meaning from HTTP response status codes.
 - [Usage](#usage)
 - [List in JSON format](#list-in-json-format)
 - [Tests](#tests)
-- [TODO](#-todo)
-- [Contribute](#contribute)
-- [Repository](#repository)
+- [TODO](#todo)
+- [Changelog](#changelog)
+- [Contribution](#contribution)
+- [Sponsor](#Sponsor)
 - [License](#license)
-- [Copyright](#copyright)
 
 ---
 
 ## Requirements
 
-This library is supported by **PHP versions 5.6** or higher and is compatible with **HHVM versions 3.0** or higher.
+Esta biblioteca es compatible con las versiones de PHP: 8.0 | 8.1.
 
 ## Installation
 
 The preferred way to install this extension is through [Composer](http://getcomposer.org/download/).
 
-To install **PHP HTTPStatusCode library**, simply:
+To install **PHP HTTP Status Code library**, simply:
 
-    $ composer require Josantonius/HTTPStatusCode
+```console
+composer require josantonius/http-status-code
+```
 
-The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
+The previous command will only install the necessary files,
+if you prefer to **download the entire source code** you can use:
 
-    $ composer require Josantonius/HTTPStatusCode --prefer-source
+```console
+composer require josantonius/http-status-code --prefer-source
+```
 
 You can also **clone the complete repository** with Git:
 
-  $ git clone https://github.com/Josantonius/PHP-HTTPStatusCode.git
-
-Or **install it manually**:
-
-[Download HTTPStatusCode.php](https://raw.githubusercontent.com/Josantonius/PHP-HTTPStatusCode/master/src/HTTPStatusCode.php):
-
-    $ wget https://raw.githubusercontent.com/Josantonius/PHP-HTTPStatusCode/master/src/HTTPStatusCode.php
-
-[Download HTTPStatusCodeCollection.php](https://raw.githubusercontent.com/Josantonius/PHP-HTTPStatusCode/master/src/HTTPStatusCodeCollection.php):
-
-    $ wget https://raw.githubusercontent.com/Josantonius/PHP-HTTPStatusCodeCollection/master/src/HTTPStatusCodeCollection.php
+```console
+git clone https://github.com/josantonius/http-status-code.git
+```
 
 ## Available Methods
 
 Available methods in this library:
 
-## - Get meaning from an HTTP response code:
+### Create a new instance defining the language
 
 ```php
-HTTPStatusCode::get($code, $lang, $size);
+$httpStatusCode = new HttpStatusCode(string $language = 'en');
 ```
 
-| Attribute | Description | Type | Required | Default
-| --- | --- | --- | --- | --- |
-| $code| HTTP response code. | mixed | Yes | |
-| $lang| Language for definition: 'es' or 'en' | string | No | 'en' |
-| $size| Definition size: 'short' or 'large' | string | No | 'short' |
+**@param** `$language` The language in which the data will be retrieved. Available languages:
+'en' (English) and
+'es' (Spanish).
 
-**# Return** (string|false) → HTTP status code definition or false if not exists
+**@throws** `UnsupportedLanguageException` if language is not supported.
 
-## - Get all meanings in a array:
+## Gets message of an HTTP status code
 
 ```php
-HTTPStatusCode::getAll($lang);
+$httpStatusCode->getMessage(int $code): string|null
 ```
 
-| Attribute | Description | Type | Required | Default
-| --- | --- | --- | --- | --- |
-| $lang| Language for definition: 'es' or 'en' | string | No | 'en' |
+## Gets the messages of all HTTP status codes
 
-**# Return** (array|false) → all definitions of HTTP response codes
+```php
+$httpStatusCode->getMessages(): array
+```
+
+## Gets definition of an HTTP status code
+
+```php
+$httpStatusCode->getDefinition(int $code): string|null
+```
+
+## Gets the definitions of all HTTP status codes
+
+```php
+$httpStatusCode->getDefinitions(): array
+```
+
+## Gets messages and definitions of all HTTP status codes
+
+```php
+$httpStatusCode->getAll(): array
+```
 
 ## Quick Start
 
@@ -89,134 +114,184 @@ To use this library with **Composer**:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
-
-use Josantonius\HTTPStatusCode\HTTPStatusCode;
 ```
 
-Or If you installed it **manually**, use it:
-
 ```php
-require_once __DIR__ . '/HTTPStatusCode.php';
-
-use Josantonius\HTTPStatusCode\HTTPStatusCode;
+use Josantonius\HttpStatusCode\HttpStatusCode;
 ```
 
 ## Usage
 
 Example of use for this library:
 
-### - Get the short english meaning of an HTTP response code:
+### - Create a new instance defining the language
 
 ```php
-HTTPStatusCode::get(200);
+$httpStatusCode = new HttpStatusCode();     // Gets the messages in English.
 ```
 
-### - Get the short spanish meaning of an HTTP response code:
-
 ```php
-HTTPStatusCode::get(200, 'es');
+$httpStatusCode = new HttpStatusCode('es'); // Gets the messages in Spanish.
 ```
 
-### - Get the detailed english meaning of an HTTP response code:
+## - Gets message of an HTTP status code
 
 ```php
-HTTPStatusCode::get(200, 'en', 'large');
+$httpStatusCode->getMessage(404);
 ```
 
-### - Get the detailed spanish meaning of an HTTP response code:
+Returns:
 
 ```php
-HTTPStatusCode::get(200, 'es', 'large');
+'Not Found'
 ```
 
-### - Get the short english meaning of an HTTP response code:
+## - Gets the messages of all HTTP status codes
 
 ```php
-HTTPStatusCode::get(200, 'en', 'short');
+$httpStatusCode->getMessages();
 ```
 
-### - Get the short spanish meaning of an HTTP response code:
+Returns:
 
 ```php
-HTTPStatusCode::get(200, 'es', 'short');
+[
+    100 => 'Continue',
+    101 => 'Switching Protocols',
+    102 => 'Processing',
+
+    (...)
+]
 ```
 
-### - Get a english HTTP response code array:
+## - Gets definition of an HTTP status code
 
 ```php
-HTTPStatusCode::getAll();
+$httpStatusCode->getDefinition(404);
 ```
 
-### - Get a spanish HTTP response code array:
+Returns:
 
 ```php
-HTTPStatusCode::getAll('es');
+'The requested resource could not be found but (...)'
+```
+
+## - Gets the definitions of all HTTP status codes
+
+```php
+$httpStatusCode->getDefinitions();
+```
+
+Returns:
+
+```php
+[
+    100 => 'The server has received the request (...)',
+    101 => 'The requester has asked the server (...)',
+    102 => 'A WebDAV request may contain many (...)',
+
+    (...)
+]
+```
+
+## - Gets messages and definitions of all HTTP status codes
+
+```php
+$httpStatusCode->getAll();
+```
+
+```php
+[
+    100 => [
+        'message'    => 'Continue',
+        'definition' => 'The server has received the request (...)',
+    ],
+    101 => [
+        'message'    => 'Switching Protocols',
+        'definition' => 'The requester has asked the server (...)',
+    ],
+    102 => [
+        'message'    => 'Processing',
+        'definition' => 'A WebDAV request may contain many (...)',
+    ],
+
+    (...)
+]
 ```
 
 ## List in JSON format
 
-[Go to the resource](https://gist.github.com/Josantonius/0a889ab6f18db2fcefda15a039613293).
+<https://gist.github.com/Josantonius/0a889ab6f18db2fcefda15a039613293>
 
-## Tests 
+## Tests
 
-To run [tests](tests) you just need [composer](http://getcomposer.org/download/) and to execute the following:
+To run [tests](tests) you just need [composer](http://getcomposer.org/download/)
+and to execute the following:
 
-    $ git clone https://github.com/Josantonius/PHP-HTTPStatusCode.git
-    
-    $ cd PHP-HTTPStatusCode
+```console
+git clone https://github.com/josantonius/php-http-status-code.git
+```
 
-    $ composer install
+```console
+cd php-http-status-code
+```
+
+```console
+composer install
+```
 
 Run unit tests with [PHPUnit](https://phpunit.de/):
 
-    $ composer phpunit
+```console
+composer phpunit
+```
 
-Run [PSR2](http://www.php-fig.org/psr/psr-2/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+Run [PSR12](http://www.php-fig.org/psr/psr-12/) code standard tests with
+[PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
-    $ composer phpcs
+```console
+composer phpcs
+```
 
 Run [PHP Mess Detector](https://phpmd.org/) tests to detect inconsistencies in code style:
 
-    $ composer phpmd
+```console
+composer phpmd
+```
 
 Run all previous tests:
 
-    $ composer tests
+```console
+composer tests
+```
 
-## ☑ TODO
+## TODO
 
-- [ ] Add new feature.
-- [ ] Improve tests.
-- [ ] Improve documentation.
-- [ ] Refactor code for disabled code style rules. See [phpmd.xml](phpmd.xml) and [.php_cs.dist](.php_cs.dist).
+- [ ] Add new feature
+- [ ] Improve tests
+- [ ] Improve documentation
+- [ ] Improve English translation in the README file
+- [ ] Refactor code for disabled code style rules (see phpmd.xml and phpcs.xml)
 
-## Contribute
+## Changelog
 
-If you would like to help, please take a look at the list of
-[issues](https://github.com/Josantonius/PHP-HTTPStatusCode/issues) or the [To Do](#-todo) checklist.
+Detailed changes for each release are documented in the
+[release notes](https://github.com/josantonius/php-http-status-code/releases).
 
-**Pull requests**
+## Contribution
 
-* [Fork and clone](https://help.github.com/articles/fork-a-repo).
-* Run the command `composer install` to install the dependencies.
-  This will also install the [dev dependencies](https://getcomposer.org/doc/03-cli.md#install).
-* Run the command `composer fix` to excute code standard fixers.
-* Run the [tests](#tests).
-* Create a **branch**, **commit**, **push** and send me a
-  [pull request](https://help.github.com/articles/using-pull-requests).
+Please make sure to read the [Contributing Guide](.github/CONTRIBUTING.md), before making a pull
+request, start a discussion or report a issue.
 
-## Repository
+Thanks to all [contributors](https://github.com/josantonius/php-http-status-code/graphs/contributors)! :heart:
 
-The file structure from this repository was created with [PHP-Skeleton](https://github.com/Josantonius/PHP-Skeleton).
+## Sponsor
+
+If this project helps you to reduce your development time,
+[you can sponsor me](https://github.com/josantonius#sponsor) to support my open source work :blush:
 
 ## License
 
-This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
+This repository is licensed under the [MIT License](LICENSE).
 
-## Copyright
-
-2016 - 2018 Josantonius, [josantonius.com](https://josantonius.com/)
-
-If you find it useful, let me know :wink:
-
-You can contact me on [Twitter](https://twitter.com/Josantonius) or through my [email](mailto:hello@josantonius.com).
+Copyright © 2016-present, [Josantonius](https://github.com/josantonius#contact)
