@@ -1,8 +1,20 @@
 # CHANGELOG
 
-## [v2.0.1](https://github.com/josantonius/php-json/releases/tag/v2.0.1) (2022-08-04)
+## [v2.0.2](https://github.com/josantonius/php-json/releases/tag/v2.0.2) (2022-08-04)
 
 * Fix Packagist URL in `README.md` files
+
+## [v2.0.1](https://github.com/josantonius/php-json/releases/tag/v2.0.1) (2022-07-31)
+
+* The links in the `CHANGELOG.md` file have been fixed.
+
+* Removed the warning about version 1.x in the `README.md` files.
+
+* The comment in the exception class was modified.
+
+* pre-release/v2.0.1 in <https://github.com/josantonius/php-http-status-code/pull/2>
+
+**Full Changelog**: <https://github.com/josantonius/php-http-status-code/compare/v2.0.0...v2.0.1>
 
 ## [v2.0.0](https://github.com/josantonius/php-json/releases/tag/v2.0.0) (2022-07-31)
 
