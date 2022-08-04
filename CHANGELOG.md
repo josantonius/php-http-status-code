@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v2.0.1](https://github.com/josantonius/php-json/releases/tag/v2.0.1) (2022-08-04)
+
+* Fix Packagist URL in `README.md` files
+
 ## [v2.0.0](https://github.com/josantonius/php-json/releases/tag/v2.0.0) (2022-07-31)
 
 > Version 1.x is considered as deprecated and unsupported.
