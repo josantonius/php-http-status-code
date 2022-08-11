@@ -17,8 +17,9 @@ Biblioteca de PHP para obtener mensajes y definiciones de códigos de estado HTT
 
 - [Requisitos](#requisitos)
 - [Instalación](#instalación)
-- [Métodos disponibles](#métodos-disponibles)
-- [Cómo empezar](#cómo-empezar)
+- [Available Classes](#available-classes)
+  - [Clase HttpStatusCode](#clase-httpstatuscode)
+- [Excepciones utilizadas](#excepciones-utilizadas)
 - [Uso](#uso)
 - [Listado en formato JSON](#listado-en-formato-json)
 - [Tests](#tests)
@@ -57,69 +58,69 @@ También puedes **clonar el repositorio** completo con Git:
 git clone https://github.com/josantonius/http-status-code.git
 ```
 
-## Métodos disponibles
+## Clases disponibles
 
-Métodos disponibles en esta biblioteca:
-
-### Crear una nueva instancia que defina el idioma
+### Clase HttpStatusCode
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+```
+
+Crear una nueva instancia que defina el idioma:
+
+```php
+/**
+ * @param string $language El idioma en el que se recuperarán los datos.
+ *
+ *                         Idiomas disponibles: en (inglés)
+ *                                              es (español)
+ * 
+ * @throws UnsupportedLanguageException if language is not supported.
+ */
 $httpStatusCode = new HttpStatusCode(string $language = 'en');
 ```
 
-**@param** `$language` El idioma en el que se recuperarán los datos. Idiomas disponibles:
-'en' (inglés) y
-'es' (español).
-
-**@throws** `UnsupportedLanguageException` si el idioma no está soportado.
-
-## Obtiene el mensaje de un código de estado HTTP
+Obtiene el mensaje de un código de estado HTTP:
 
 ```php
 $httpStatusCode->getMessage(int $code): string|null
 ```
 
-## Obtiene los mensajes de todos los códigos de estado HTTP
+Obtiene los mensajes de todos los códigos de estado HTTP:
 
 ```php
 $httpStatusCode->getMessages(): array
 ```
 
-## Obtiene la definición de un código de estado HTTP
+Obtiene la definición de un código de estado HTTP:
 
 ```php
 $httpStatusCode->getDefinition(int $code): string|null
 ```
 
-## Obtiene las definiciones de todos los códigos de estado HTTP
+Obtiene las definiciones de todos los códigos de estado HTTP:
 
 ```php
 $httpStatusCode->getDefinitions(): array
 ```
 
-## Obtiene mensajes y definiciones de todos los códigos de estado HTTP
+Obtiene mensajes y definiciones de todos los códigos de estado HTTP:
 
 ```php
 $httpStatusCode->getAll(): array
 ```
 
-## Cómo empezar
-
-Para utilizar esta biblioteca con **Composer**:
+## Excepciones utilizadas
 
 ```php
-require __DIR__ . '/vendor/autoload.php';
-```
-
-```php
-use Josantonius\HttpStatusCode\HttpStatusCode;
+use Josantonius\HttpStatusCode\UnsupportedLanguageException;
 ```
 
 ## Uso
 
 Ejemplo de uso para esta biblioteca:
 
-### - Crear una nueva instancia que defina el idioma
+### Crear una nueva instancia que defina el idioma
 
 ```php
 $httpStatusCode = new HttpStatusCode();     // Obtiene los mensajes en inglés.
@@ -129,25 +130,33 @@ $httpStatusCode = new HttpStatusCode();     // Obtiene los mensajes en inglés.
 $httpStatusCode = new HttpStatusCode('es'); // Obtiene los mensajes en español.
 ```
 
-## - Obtiene el mensaje de un código de estado HTTP
+### Obtiene el mensaje de un código de estado HTTP
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getMessage(404);
 ```
 
-Returns:
+Devuelve:
 
 ```php
 'No encontrado'
 ```
 
-## - Obtiene los mensajes de todos los códigos de estado HTTP
+### Obtiene los mensajes de todos los códigos de estado HTTP
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getMessages();
 ```
 
-Returns:
+Devuelve:
 
 ```php
 [
@@ -159,25 +168,33 @@ Returns:
 ]
 ```
 
-## - Obtiene la definición de un código de estado HTTP
+### Obtiene la definición de un código de estado HTTP
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getDefinition(404);
 ```
 
-Returns:
+Devuelve:
 
 ```php
 'Recurso no encontrado. Se utiliza cuando (...)'
 ```
 
-## - Obtiene las definiciones de todos los códigos de estado HTTP
+### Obtiene las definiciones de todos los códigos de estado HTTP
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getDefinitions();
 ```
 
-Returns:
+Devuelve:
 
 ```php
 [
@@ -189,9 +206,13 @@ Returns:
 ]
 ```
 
-## - Obtiene mensajes y definiciones de todos los códigos de estado HTTP
+### Obtiene mensajes y definiciones de todos los códigos de estado HTTP
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getAll();
 ```
 

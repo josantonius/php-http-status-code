@@ -17,8 +17,9 @@ PHP library to get HTTP status code messages and definitions.
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Available Methods](#available-methods)
-- [Quick Start](#quick-start)
+- [Available Classes](#available-classes)
+  - [HttpStatusCode Class](#httpstatuscode-class)
+- [Exceptions Used](#exceptions-used)
 - [Usage](#usage)
 - [List in JSON format](#list-in-json-format)
 - [Tests](#tests)
@@ -57,71 +58,73 @@ You can also **clone the complete repository** with Git:
 git clone https://github.com/josantonius/http-status-code.git
 ```
 
-## Available Methods
+## Available Classes
 
-Available methods in this library:
-
-### Create a new instance defining the language
+### HttpStatusCode Class
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+```
+
+Create a new instance defining the language:
+
+```php
+/**
+ * @param string $language The language in which the data will be retrieved.
+ *
+ *                         Available languages: en (English)
+ *                                              es (Spanish)
+ * 
+ * @throws UnsupportedLanguageException if language is not supported.
+ */
 $httpStatusCode = new HttpStatusCode(string $language = 'en');
 ```
 
-**@param** `$language` The language in which the data will be retrieved. Available languages:
-'en' (English) and
-'es' (Spanish).
-
-**@throws** `UnsupportedLanguageException` if language is not supported.
-
-## Gets message of an HTTP status code
+Gets message of an HTTP status code:
 
 ```php
 $httpStatusCode->getMessage(int $code): string|null
 ```
 
-## Gets the messages of all HTTP status codes
+Gets the messages of all HTTP status codes:
 
 ```php
 $httpStatusCode->getMessages(): array
 ```
 
-## Gets definition of an HTTP status code
+Gets definition of an HTTP status code:
 
 ```php
 $httpStatusCode->getDefinition(int $code): string|null
 ```
 
-## Gets the definitions of all HTTP status codes
+Gets the definitions of all HTTP status codes:
 
 ```php
 $httpStatusCode->getDefinitions(): array
 ```
 
-## Gets messages and definitions of all HTTP status codes
+Gets messages and definitions of all HTTP status codes:
 
 ```php
 $httpStatusCode->getAll(): array
 ```
 
-## Quick Start
-
-To use this library with **Composer**:
+## Exceptions Used
 
 ```php
-require __DIR__ . '/vendor/autoload.php';
-```
-
-```php
-use Josantonius\HttpStatusCode\HttpStatusCode;
+use Josantonius\HttpStatusCode\UnsupportedLanguageException;
 ```
 
 ## Usage
 
 Example of use for this library:
 
-### - Create a new instance defining the language
+### Create a new instance defining the language
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
 $httpStatusCode = new HttpStatusCode();     // Gets the messages in English.
 ```
 
@@ -129,9 +132,13 @@ $httpStatusCode = new HttpStatusCode();     // Gets the messages in English.
 $httpStatusCode = new HttpStatusCode('es'); // Gets the messages in Spanish.
 ```
 
-## - Gets message of an HTTP status code
+### Gets message of an HTTP status code
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getMessage(404);
 ```
 
@@ -141,9 +148,13 @@ Returns:
 'Not Found'
 ```
 
-## - Gets the messages of all HTTP status codes
+### Gets the messages of all HTTP status codes
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getMessages();
 ```
 
@@ -159,9 +170,13 @@ Returns:
 ]
 ```
 
-## - Gets definition of an HTTP status code
+### Gets definition of an HTTP status code
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getDefinition(404);
 ```
 
@@ -171,9 +186,13 @@ Returns:
 'The requested resource could not be found but (...)'
 ```
 
-## - Gets the definitions of all HTTP status codes
+### Gets the definitions of all HTTP status codes
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getDefinitions();
 ```
 
@@ -189,9 +208,13 @@ Returns:
 ]
 ```
 
-## - Gets messages and definitions of all HTTP status codes
+### Gets messages and definitions of all HTTP status codes
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
+$httpStatusCode = new HttpStatusCode();
+
 $httpStatusCode->getAll();
 ```
 
