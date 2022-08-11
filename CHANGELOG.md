@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v2.0.3](https://github.com/josantonius/php-json/releases/tag/v2.0.3) (2022-08-11)
+
+* Improved documentation.
+
 ## [v2.0.2](https://github.com/josantonius/php-json/releases/tag/v2.0.2) (2022-08-04)
 
 * Fix Packagist URL in `README.md` files
