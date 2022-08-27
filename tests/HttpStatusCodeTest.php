@@ -1,13 +1,15 @@
 <?php
 
 /*
-* This file is part of https://github.com/josantonius/php-http-status-code repository.
-*
-* (c) Josantonius <hello@josantonius.dev>
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * This file is part of https://github.com/josantonius/php-http-status-code repository.
+ *
+ * (c) Josantonius <hello@josantonius.dev>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+ */
 
 namespace Josantonius\HttpStatusCode\Tests;
 
@@ -29,14 +31,14 @@ class HttpStatusCodeTest extends TestCase
         $this->httpStatusCodeEs = new HttpStatusCode('es');
     }
 
-    public function testShouldFailIfUnsupportedLanguageIsUsed()
+    public function test_should_fail_if_unsupported_language_is_used()
     {
         $this->expectException(UnsupportedLanguageException::class);
 
         new HttpStatusCode('fr');
     }
 
-    public function testShouldGetMessage()
+    public function test_should_get_message()
     {
         $this->assertEquals(
             'Request Time-out',
@@ -49,7 +51,7 @@ class HttpStatusCodeTest extends TestCase
         );
     }
 
-    public function testShouldGetMessages()
+    public function test_should_get_messages()
     {
         $messages = $this->httpStatusCodeEn->getMessages();
 
@@ -57,7 +59,7 @@ class HttpStatusCodeTest extends TestCase
         $this->assertArrayHasKey(408, $messages);
     }
 
-    public function testShouldGetDefinition()
+    public function test_should_get_definition()
     {
         $this->assertStringContainsString(
             'The server timed out waiting for the request.',
@@ -70,7 +72,7 @@ class HttpStatusCodeTest extends TestCase
         );
     }
 
-    public function testShouldGetDefinitions()
+    public function test_should_get_definitions()
     {
         $definitions = $this->httpStatusCodeEn->getDefinitions();
 
@@ -78,7 +80,7 @@ class HttpStatusCodeTest extends TestCase
         $this->assertArrayHasKey(408, $definitions);
     }
 
-    public function testShouldGetAll()
+    public function test_should_get_all()
     {
         $all = $this->httpStatusCodeEn->getAll();
 
