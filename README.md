@@ -33,7 +33,9 @@ PHP library to get HTTP status code messages and definitions.
 
 ## Requirements
 
-Esta biblioteca es compatible con las versiones de PHP: 8.0 | 8.1.
+- Operating System: Linux | Windows.
+
+- PHP versions: 8.1 | 8.2.
 
 ## Installation
 

@@ -33,7 +33,9 @@ Biblioteca de PHP para obtener mensajes y definiciones de códigos de estado HTT
 
 ## Requisitos
 
-Esta biblioteca es compatible con las versiones de PHP: 8.0 | 8.1.
+- Sistema operativo: Linux | Windows.
+
+- Versiones de PHP: 8.1 | 8.2.
 
 ## Instalación
 
