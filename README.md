@@ -26,14 +26,16 @@ PHP library to get HTTP status code messages and definitions.
 - [TODO](#todo)
 - [Changelog](#changelog)
 - [Contribution](#contribution)
-- [Sponsor](#Sponsor)
+- [Sponsor](#sponsor)
 - [License](#license)
 
 ---
 
 ## Requirements
 
-Esta biblioteca es compatible con las versiones de PHP: 8.0 | 8.1.
+- Operating System: Linux | Windows.
+
+- PHP versions: 8.0 | 8.1 | 8.2.
 
 ## Installation
 
@@ -62,9 +64,7 @@ git clone https://github.com/josantonius/http-status-code.git
 
 ### HttpStatusCode Class
 
-```php
-use Josantonius\HttpStatusCode\HttpStatusCode;
-```
+`Josantonius\HttpStatusCode\HttpStatusCode`
 
 Create a new instance defining the language:
 
@@ -77,37 +77,37 @@ Create a new instance defining the language:
  * 
  * @throws UnsupportedLanguageException if language is not supported.
  */
-$httpStatusCode = new HttpStatusCode(string $language = 'en');
+public function __construct(string $language = 'en');
 ```
 
 Gets message of an HTTP status code:
 
 ```php
-$httpStatusCode->getMessage(int $code): string|null
+public function getMessage(int $code): string|null;
 ```
 
 Gets the messages of all HTTP status codes:
 
 ```php
-$httpStatusCode->getMessages(): array
+public function getMessages(): array;
 ```
 
 Gets definition of an HTTP status code:
 
 ```php
-$httpStatusCode->getDefinition(int $code): string|null
+public function getDefinition(int $code): string|null;
 ```
 
 Gets the definitions of all HTTP status codes:
 
 ```php
-$httpStatusCode->getDefinitions(): array
+public function getDefinitions(): array;
 ```
 
 Gets messages and definitions of all HTTP status codes:
 
 ```php
-$httpStatusCode->getAll(): array
+public function getAll(): array;
 ```
 
 ## Exceptions Used
@@ -129,6 +129,8 @@ $httpStatusCode = new HttpStatusCode();     // Gets the messages in English.
 ```
 
 ```php
+use Josantonius\HttpStatusCode\HttpStatusCode;
+
 $httpStatusCode = new HttpStatusCode('es'); // Gets the messages in Spanish.
 ```
 
