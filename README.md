@@ -35,7 +35,7 @@ PHP library to get HTTP status code messages and definitions.
 
 - Operating System: Linux | Windows.
 
-- PHP versions: 8.1 | 8.2.
+- PHP versions: 8.0 | 8.1 | 8.2.
 
 ## Installation
 
